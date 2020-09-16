@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.8.1
+    hostname: elasticsearch
+    container_name: elasticsearch
+    environment:
+      discovery.type: single-node
+    volumes:
+      - elasticsearch:/var/lib/elasticsearch
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    networks:
+      - network
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.8.1
+    hostname: kibana
+    container_name: kibana
+    links:
+      - elasticsearch
+    ports:
+      - "5601:5601"
+    networks:
+      - network
+    depends_on:
+      - elasticsearch
+
+networks:
+  network:
+    driver: bridge
+
+volumes:
+  elasticsearch:
+    external: true
