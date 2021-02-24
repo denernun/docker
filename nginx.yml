@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  nginx:
+    image: nginx:latest
+    hostname: nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - type: bind
+        source: D:\\WEB\\html
+        target: /var/share/nginx/html
+    configs:
+      - source: ./nginx.conf
+        target: /etc/nginx/nginx.conf
+      - source: ./certs
+        target: /etc/nginx/certs
+      - source: ./html
+        target: /var/share/nginx/html
+    networks:
+      - network
+
+networks:
+  network:
+    driver: bridge
