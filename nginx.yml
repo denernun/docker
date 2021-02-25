@@ -10,18 +10,19 @@ services:
       - "443:443"
     volumes:
       - type: bind
-        source: D:\\WEB\\html
-        target: /var/share/nginx/html
-    configs:
-      - source: ./nginx.conf
-        target: /etc/nginx/nginx.conf
-      - source: ./certs
+        source: D:\\WEB\\certs
         target: /etc/nginx/certs
-      - source: ./html
-        target: /var/share/nginx/html
+      - type: bind
+        source: D:\\WEB\\nginx.conf
+        target: /etc/nginx/nginx.conf
+      - type: bind
+        source: D:\\WEB\\html
+        target: /usr/share/nginx/html
+      - type: bind
+        source: D:\\WEB\\coreui\\dist
+        target: /usr/share/nginx/html/coreui
     networks:
       - network
-
 networks:
   network:
     driver: bridge
