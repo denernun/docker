@@ -1,4 +1,7 @@
 version: "3.8"
+networks:
+  network:
+    driver: bridge
 services:
   nginx:
     image: nginx:latest
@@ -23,6 +26,3 @@ services:
         target: /usr/share/nginx/html/coreui
     networks:
       - network
-networks:
-  network:
-    driver: bridge
