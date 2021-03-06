@@ -1,4 +1,8 @@
 version: "3.8"
+networks:
+  network:
+    name: network
+    driver: bridge
 services:
   # sonarqube-postgres:
   #   image: postgres
@@ -50,7 +54,3 @@ volumes:
     external: true
   sonar-plugins:
     external: true
-
-networks:
-  network:
-    driver: bridge
