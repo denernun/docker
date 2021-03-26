@@ -12,8 +12,6 @@ services:
     image: mysql/mysql-server:5.7
     hostname: mysql
     container_name: mysql
-    restart: always
-    tty: true
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: user

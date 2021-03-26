@@ -12,8 +12,6 @@ services:
     image: 'bitnami/zookeeper:latest'
     hostname: zookeeper
     container_name: zookeeper
-    restart: always
-    tty: true
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
     ports:
@@ -24,8 +22,6 @@ services:
     image: 'bitnami/kafka:latest'
     hostname: kafka
     container_name: kafka
-    restart: always
-    tty: true
     environment:
       - KAFKA_BROKER_ID=1
       - KAFKA_LISTENERS=PLAINTEXT://:9092
