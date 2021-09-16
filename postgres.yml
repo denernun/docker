@@ -5,8 +5,7 @@ networks:
     driver: bridge
 volumes:
   data:
-    external:
-      name: postgres
+    name: postgres
 services:
   postgres:
     image: postgres:12.5

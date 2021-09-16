@@ -5,8 +5,7 @@ networks:
     driver: bridge
 volumes:
   data:
-    external:
-      name: kafka
+    name: kafka
 services:
   zookeeper:
     image: 'bitnami/zookeeper:latest'

@@ -5,8 +5,7 @@ networks:
     driver: bridge
 volumes:
   data:
-    external:
-      name: mongo
+    name: mongo
 services:
   mongo:
     image: mongo

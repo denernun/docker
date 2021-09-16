@@ -5,8 +5,7 @@ networks:
     driver: bridge
 volumes:
   data:
-    external:
-      name: redis
+    name: redis
 services:
   redis:
     image: redis

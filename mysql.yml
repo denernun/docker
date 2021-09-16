@@ -5,8 +5,7 @@ networks:
     driver: bridge
 volumes:
   data:
-    external:
-      name: mysql
+    name: mysql
 services:
   mysql:
     image: mysql/mysql-server:5.7
