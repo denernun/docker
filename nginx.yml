@@ -22,8 +22,5 @@ services:
       - type: bind
         source: D:\\WEB\\html
         target: /usr/share/nginx/html
-      - type: bind
-        source: D:\\WEB\\coreui\\dist
-        target: /usr/share/nginx/html/coreui
     networks:
       - network
