@@ -8,7 +8,7 @@ volumes:
     name: mysql
 services:
   mysql:
-    image: mysql/mysql-server:5.7
+    image: mysql/mysql-server:latest
     hostname: mysql
     container_name: mysql
     restart: always

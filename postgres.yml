@@ -8,7 +8,7 @@ volumes:
     name: postgres
 services:
   postgres:
-    image: postgres:12.5
+    image: postgres:12.8
     hostname: postgres
     container_name: postgres
     restart: always
