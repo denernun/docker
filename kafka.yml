@@ -5,6 +5,7 @@ networks:
     driver: bridge
 volumes:
   data:
+    external: true
     name: kafka
 services:
   zookeeper:
@@ -21,6 +22,7 @@ services:
     image: 'bitnami/kafka:latest'
     hostname: kafka
     container_name: kafka
+    restart: always
     environment:
       - KAFKA_BROKER_ID=1
       - KAFKA_LISTENERS=PLAINTEXT://:9092
