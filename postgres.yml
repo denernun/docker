@@ -4,7 +4,7 @@ networks:
     name: network
     driver: bridge
 volumes:
-  data:
+  postgres:
     external: true
     name: postgres
 services:
@@ -22,4 +22,4 @@ services:
     networks:
       - network
     volumes:
-      - data:/var/lib/postgresql/data
+      - postgres:/var/lib/postgresql/data

@@ -4,7 +4,7 @@ networks:
     name: network
     driver: bridge
 volumes:
-  data:
+  kafka:
     external: true
     name: kafka
 services:
@@ -35,6 +35,6 @@ services:
     networks:
       - network
     volumes:
-      - data:/bitnami/kafka
+      - kafka:/bitnami/kafka
     depends_on:
       - zookeeper

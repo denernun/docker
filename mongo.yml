@@ -4,7 +4,7 @@ networks:
     name: network
     driver: bridge
 volumes:
-  data:
+  mongo:
     external: true
     name: mongo
 services:
@@ -22,5 +22,5 @@ services:
     networks:
       - network
     volumes:
-      - data:/data/db
-      - data:/data/configdb
+      - mongo:/data/db
+      - mongo:/data/configdb

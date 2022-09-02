@@ -4,7 +4,7 @@ networks:
     name: network
     driver: bridge
 volumes:
-  data:
+  redis:
     external: true
     name: redis
 services:
@@ -19,4 +19,4 @@ services:
     networks:
       - network
     volumes:
-      - data:/data
+      - redis:/data
