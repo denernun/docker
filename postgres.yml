@@ -9,7 +9,7 @@ volumes:
     name: postgres
 services:
   postgres:
-    image: postgres:12.8
+    image: postgres:12.12
     hostname: postgres
     container_name: postgres
     restart: always
