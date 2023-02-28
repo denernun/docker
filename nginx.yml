@@ -11,17 +11,17 @@ services:
     restart: always
     tty: true
     ports:
-      - '80:80'
-      - '443:443'
+      - "80:80"
+      - "443:443"
     volumes:
       - type: bind
-        source: D:\\WEB\\certs
+        source: /mnt/d/WEB/certs
         target: /etc/nginx/certs
       - type: bind
-        source: D:\\WEB\\nginx.conf
+        source: /mnt/d/WEB/nginx.conf
         target: /etc/nginx/nginx.conf
       - type: bind
-        source: D:\\WEB\\html
+        source: /mnt/d/WEB/html
         target: /usr/share/nginx/html
     networks:
       - network
