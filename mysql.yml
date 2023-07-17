@@ -1,12 +1,15 @@
-version: "3.8"
+version: '3.8'
+
 networks:
   network:
     name: network
     driver: bridge
+
 volumes:
   data:
     external: true
     name: mysql
+
 services:
   mysql:
     image: mysql/mysql-server:latest
@@ -19,7 +22,7 @@ services:
       MYSQL_PASSWORD: password
       MYSQL_DATABASE: mysql
     ports:
-      - "3306:3306"
+      - '3306:3306'
     volumes:
       - data:/var/lib/mysql
     networks:
