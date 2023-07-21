@@ -1,4 +1,4 @@
-version: '3.1'
+version: '3.8'
 
 networks:
   network:
@@ -6,7 +6,7 @@ networks:
     driver: bridge
 
 volumes:
-  postgres:
+  data:
     external: true
     name: postgres
 
@@ -25,19 +25,4 @@ services:
     networks:
       - network
     volumes:
-      - postgres:/var/lib/postgresql/data
-
-  pgadmin:
-    image: dpage/pgadmin4
-    hostname: pgadmin
-    container_name: pgadmin
-    depends_on:
-      - postgres
-    restart: always
-    environment:
-      PGADMIN_DEFAULT_EMAIL: 'denernun@gmail.com'
-      PGADMIN_DEFAULT_PASSWORD: 'password'
-    ports:
-      - '15432:80'
-    networks:
-      - network
+      - data:/var/lib/postgresql/data
