@@ -1,12 +1,13 @@
-version: "3.8"
 networks:
   network:
     name: network
     driver: bridge
+
 volumes:
   redis:
     external: true
     name: redis
+
 services:
   redis:
     image: redis
@@ -15,7 +16,7 @@ services:
     restart: always
     command: redis-server
     ports:
-      - "6379:6379"
+      - '6379:6379'
     networks:
       - network
     volumes:
