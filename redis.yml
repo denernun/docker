@@ -14,10 +14,22 @@ services:
     hostname: redis
     container_name: redis
     restart: always
-    command: redis-server
+    command: ['redis-server', '/usr/local/etc/redis/redis.conf']
     ports:
       - '6379:6379'
     networks:
       - network
     volumes:
       - redis:/data
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+
+  redisinsight:
+    image: redis/redisinsight:latest
+    hostname: redisinsight
+    container_name: redisinsight
+    ports:
+      - '5540:5540'
+    networks:
+      - network
+    depends_on:
+      - redis
