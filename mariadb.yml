@@ -10,7 +10,7 @@ volumes:
 
 services:
   mysql:
-    image: mysql/mysql-server:latest
+    image: mariadb:latest
     hostname: mysql
     container_name: mysql
     restart: always
