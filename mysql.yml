@@ -1,6 +1,7 @@
 networks:
   network:
     name: network
+    external: true
     driver: bridge
 
 volumes:
@@ -21,7 +22,7 @@ services:
       MYSQL_DATABASE: mysql
     ports:
       - '3306:3306'
-    volumes:
-      - data:/var/lib/mysql
     networks:
       - network
+    volumes:
+      - data:/var/lib/mysql

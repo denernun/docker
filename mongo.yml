@@ -1,11 +1,11 @@
-version: '3.9'
 networks:
   network:
     name: network
+    external: true
     driver: bridge
 
 volumes:
-  mongo:
+  data:
     external: true
     name: mongo
 
@@ -23,8 +23,8 @@ services:
     networks:
       - network
     volumes:
-      - mongo:/data/db
-      - mongo:/data/configdb
+      - data:/data/db
+      - data:/data/configdb
 
   mongo-express:
     image: mongo-express:latest

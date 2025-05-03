@@ -1,6 +1,7 @@
 networks:
   network:
     name: network
+    external: true
     driver: bridge
 
 volumes:

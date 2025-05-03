@@ -1,10 +1,11 @@
 networks:
   network:
     name: network
+    external: true
     driver: bridge
 
 volumes:
-  rabbit:
+  data:
     external: true
     name: rabbit
 
@@ -23,5 +24,5 @@ services:
     networks:
       - network
     volumes:
-      - rabbit:/var/lib/rabbitmq/
-      - rabbit:/var/log/rabbitmq
+      - data:/var/lib/rabbitmq/
+      - data:/var/log/rabbitmq

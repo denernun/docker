@@ -1,10 +1,11 @@
 networks:
   network:
     name: network
+    external: true
     driver: bridge
 
 volumes:
-  redis:
+  data:
     external: true
     name: redis
 
@@ -20,7 +21,7 @@ services:
     networks:
       - network
     volumes:
-      - redis:/data
+      - data:/data
       - ./redis.conf:/usr/local/etc/redis/redis.conf
 
   redisinsight:
