@@ -22,7 +22,7 @@ services:
       - network
     volumes:
       - data:/data
-      - ./redis.conf:/usr/local/etc/redis/redis.conf
+      - d:/DOCKER/redis.conf:/usr/local/etc/redis/redis.conf
 
   redisinsight:
     image: redis/redisinsight:latest
