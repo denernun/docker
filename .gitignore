@@ -1,0 +1,51 @@
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Backups
+*.backup
+*.bak
+*.sql.gz
+*.tar.gz
+backups/
+
+# Arquivos temporários
+*.tmp
+*.temp
+.cache/
+
+# IDEs
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# Variáveis de ambiente sensíveis
+.env
+*.env
+!.env.example
+
+# Dados locais (se houver)
+data/
+volumes/
+
+# Node modules (se houver)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Python (se houver)
+__pycache__/
+*.pyc
+*.pyo
+venv/
+env/
+
+# Docker Compose overrides locais
+docker-compose.override.yml
