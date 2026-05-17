@@ -16,7 +16,6 @@ services:
     container_name: redis
     restart: always
     command: ['redis-server', '/usr/local/etc/redis/redis.conf']
-    #command: ['redis-server', '/usr/local/etc/redis/redis.conf', '--requirepass', 'bgbm6q/F/IKP9kCPzBAa10iMsSiyBsBJCr4plZ6qAF0=']
     ports:
       - '6379:6379'
     networks:
